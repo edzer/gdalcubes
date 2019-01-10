@@ -1,0 +1,734 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://github.com/appelmar/gdalcubes/concepts.html">
+      
+      
+        <meta name="author" content="Marius Appel">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Basic concepts - gdalcubes</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="deep-orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#concepts" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://github.com/appelmar/gdalcubes" title="gdalcubes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">collections</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                gdalcubes
+              </span>
+              <span class="md-header-nav__topic">
+                Basic concepts
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/appelmar/gdalcubes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://github.com/appelmar/gdalcubes" title="gdalcubes" class="md-nav__button md-logo">
+      
+        <i class="md-icon">collections</i>
+      
+    </a>
+    gdalcubes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/appelmar/gdalcubes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="installation.html" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Basic concepts
+      </label>
+    
+    <a href="concepts.html" title="Basic concepts" class="md-nav__link md-nav__link--active">
+      Basic concepts
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#image-collections" title="Image collections" class="md-nav__link">
+    Image collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-cubes" title="Data cubes" class="md-nav__link">
+    Data cubes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-on-data-cubes" title="Operations on data cubes" class="md-nav__link">
+    Operations on data cubes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-data-cube-processing" title="Distributed data cube processing" class="md-nav__link">
+    Distributed data cube processing
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="R.html" title="R package" class="md-nav__link">
+      R package
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="doxygen/index.html" title="C++ API" class="md-nav__link">
+      C++ API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="server-api.html" title="Server API" class="md-nav__link">
+      Server API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="credits.html" title="Credits" class="md-nav__link">
+      Credits
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#image-collections" title="Image collections" class="md-nav__link">
+    Image collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-cubes" title="Data cubes" class="md-nav__link">
+    Data cubes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-on-data-cubes" title="Operations on data cubes" class="md-nav__link">
+    Operations on data cubes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-data-cube-processing" title="Distributed data cube processing" class="md-nav__link">
+    Distributed data cube processing
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="concepts">Concepts</h1>
+<p>This page describes the basic concepts and terms used by gdalcubes. Some of the definitions below may vary from
+other libraries. </p>
+<h2 id="image-collections">Image collections</h2>
+<p>An <em>image collection</em> is simply a set of images where all images contain identical variables (<em>bands</em>). 
+Images have a spatial footprint and a recording date/time. Values of the bands from one image may be stored in a single 
+or in several files and bands may also differ in their spatial resolution. Two different images in a collection may have 
+different map projections.  </p>
+<p>The figure below illustrates the basic structure: the image collection has 3 images, images each have a spatial extent, recording date/time, and a map projection and in this case 9 bands, where the band data come from three files per image.
+<img alt="" src="ic_structure.png" /></p>
+<p>For example, Landsat imagery comes in a very simple format where one image consist of a set of GeoTIFF files with a one to one relationship between files and bands.
+MODIS data in contrast come as one HDF4 file per image that contains all bands.</p>
+<p>In gdalcubes, anything that is readable by GDAL may contain actual band data of an image. Typically, this will be files, 
+but actually can be anything that <a href="https://www.gdal.org/gdalinfo.html">the <code>gdalinfo</code> command</a> understands, including
+cloud storage, databases, and archive files (see below) through <a href="https://www.gdal.org/gdal_virtual_file_systems.html">GDAL virtual file systems</a>. 
+Examples for valid GDAL dataset references include <code>/vsizip/archive.zip/xyz.tif</code> (a GeoTIFF file in a .zip archive), 
+<code>test.tif</code> (a simple local GeoTIFF file), <code>SENTINEL2_L1C:S2A_OPER_MTD_SAFL1C_PDMC_20150818T101440_R022_V20150813T102406_20150813T102406.xml:10m:EPSG_32632</code> (higher level GDAL Sentinel 2 datasets),
+<code>/vsicurl/https://download.osgeo.org/geotiff/samples/spot/chicago/UTM2GTIF.TIF</code> (file on an HTTP server). 
+Instead of <em>files</em> we therefore often use the terms <em>GDAL dataset reference</em> or <em>GDAL dataset descriptor</em>.</p>
+<p>Images, bands, and GDAL dataset references are indexed by gdalcubes in a single image collection file. This file is a 
+simple <a href="https://www.sqlite.org/index.html">SQLite</a> database, which stores links to all GDAL dataset references and how they
+relate to images and bands. To allow fast filtering, the collection file additionally stores the spatial extent, the 
+aquisition date/time, and the spatial reference system of images. Further imagary metadata is currently not included but
+future releases will do so, e.g. to filter images in a collection by cloud cover.</p>
+<p>gdalcubes comes with a function to create an image collection from a set of GDAL dataset references as strings. This function
+however, must know some details about the structure of a specific EO data product:</p>
+<ul>
+<li>How to derive date/time from images?</li>
+<li>Which GDAL dataset references include data for specific bands / variables?</li>
+<li>Which GDAL dataset references belong to the same image?</li>
+</ul>
+<p>These questions are answered as a set of regular expressions on the GDAL dataset references in an <em>image collection format</em>. 
+Image collection formats are JSON descriptions of how the data is structured. gdalcubes comes with some predefined
+formats. An example format for Sentinel 2 level 1C data can is presented below.</p>
+<pre><code>{
+  &quotdescription&quot : 
+      &quotImage collection format for Sentinel 2 Level 1C data as 
+       downloaded from the Copernicus Open Access Hub, expects 
+       a list of file paths as input. The format works on original 
+       ZIP compressed as well as uncompressed imagery.&quot,
+  &quottags&quot : [&quot;Sentinel&quot;, &quot;Copernicus&quot;, &quot;ESA&quot;, &quot;TOA&quot;],
+  &quotpattern&quot : &quot.+/IMG_DATA/.+\\.jp2&quot,
+  &quotimages&quot : {
+    &quotpattern&quot : &quot.*/(.+)\\.SAFE.*&quot
+  },
+  &quotdatetime&quot : {
+    &quotpattern&quot : &quot.*MSIL1C_(.+?)_.*&quot,
+    &quotformat&quot : &quot%Y%m%dT%H%M%S&quot
+  },
+  &quotbands&quot : {
+    &quotB01&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B01\\.jp2&quot},
+    &quotB02&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B02\\.jp2&quot},
+    &quotB03&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B03\\.jp2&quot},
+    &quotB04&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B04\\.jp2&quot},
+    &quotB05&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B05\\.jp2&quot},
+    &quotB06&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B06\\.jp2&quot},
+    &quotB07&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B07\\.jp2&quot},
+    &quotB08&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B08\\.jp2&quot},
+    &quotB8A&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B8A\\.jp2&quot},
+    &quotB09&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B09\\.jp2&quot},
+    &quotB10&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B10\\.jp2&quot},
+    &quotB11&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B11\\.jp2&quot},
+    &quotB12&quot : { &quotnodata&quot : 0, &quotpattern&quot : &quot.+_B12\\.jp2&quot}
+  }
+}
+</code></pre>
+
+<p>gdalcubes then automatically creates the image collection file from a set of input datasets and a collection format. A few predefined collection formats are included in the library (see https://github.com/appelmar/gdalcubes/tree/master/formats).</p>
+<h2 id="data-cubes">Data cubes</h2>
+<p>Data cubes are multidimensional arrays with dimensions band, datetime, y (latitude / northing), and x (longitude / easting). Cells of a cube
+all have the same size in space and time with regard to a defined spatial reference system. Data cubes are different from image collections. 
+Image collections are irregular in time, may contain gaps, and do not have a globally valid projection.</p>
+<p>To create data cubes from image collections, we define a <em>data cube view</em> (or simply <em>view</em>). Data cube views convert an image collection to a data cube by defining the 
+basic shape of the cube, i.e. how we look at the data from an image collection. The data cube view includes</p>
+<ul>
+<li>the spatiotemporal extent, </li>
+<li>the spatial reference system / map projection, </li>
+<li>the spatiotemporal resolution either by number of or by the size of cells,</li>
+<li>a resampling algorithm used in <a href="https://www.gdal.org/gdalwarp.html"><code>gdalwarp</code></a>, and </li>
+<li>an aggregation algorithm that combines values of several images if they are located in the same cell of the target cube </li>
+</ul>
+<p>Views can be serialized as simple JSON object as in the example below. Note that there is no single correct view for a specific image collections. Instead, they are 
+useful e.g. to run analysis an small subsets during model development before running on the full-resolution data.</p>
+<pre><code>{
+  &quotaggregation&quot : &quotmin&quot,
+  &quotresampling&quot : &quotbilinear&quot,
+  &quotspace&quot :
+  {
+    &quotleft&quot : 22.9,
+    &quotright&quot : 23.1,
+    &quottop&quot : -18.9,
+    &quotbottom&quot : -19.1,
+    &quotproj&quot : &quotEPSG:4326&quot,
+    &quotnx&quot : 500,
+    &quotny&quot : 500
+  },
+  &quottime&quot :
+  {
+    &quott0&quot : &quot2017-01-01&quot,
+    &quott1&quot : &quot2018-01-01&quot,
+    &quotdt&quot : &quotP1M&quot
+  }
+}
+</code></pre>
+
+<p>Data from images in a collection are read on-the-fly with regard to a specific data cube view. The target data cube is 
+read chunk-wise, where chunk sizes in all directions <em>can</em> be defined by the user. The procedure to read data of one chunk
+is the following:</p>
+<ol>
+<li>Find all GDAL datasets of the collection that are located within the spatiotemporal extent of the chunk</li>
+<li>Iterate over all found datasets and do the following steps:<ol>
+<li>Apply <a href="https://www.gdal.org/gdalwarp.html">gdalwarp</a> to crop, reproject / transform, and resample the current dataset according to the spatiotemporal
+extent of the current chunk and the data cube view.</li>
+<li>Store the result as an <a href="https://www.gdal.org/frmt_mem.html">in-memory GDAL dataset</a>.</li>
+<li>Copy the result to the in-memory chunk buffer (a four-dimensional array) at the correct temporal slice and the correct bands.</li>
+<li>If the chunk buffer already contains values at the target position, feed a pixel-wise aggregator (e.g. mean, median, min, max ) to combine
+    pixel values from multiple images which are located at the same cell in the data cube.</li>
+</ol>
+</li>
+<li>Finalize the pixel-wise aggregator if needed (e.g. divide pixel values by <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> for mean aggregation). </li>
+</ol>
+<p>Internally, chunk buffers are arrays of type double. Image data is however read according to their orgininal data type. gdalwarp 
+does the type conversion automatically, i.e. only the size of the chunk buffer in memory is larger but not the data that is transferred over the network for remotely stored imagery.
+If input images contain lower-resolution overviews, these are used automatically by gdalwarp depending on the target resolution of the cube.</p>
+<h2 id="operations-on-data-cubes">Operations on data cubes</h2>
+<p>Currently, gdalcubes includes operations on data cubes to</p>
+<ul>
+<li>select bands,</li>
+<li>apply pixel wise arithmetic expressions,</li>
+<li>reduce data cubes over time,</li>
+<li>join identically shaped cubes, and</li>
+<li>stream chunks of data cubes to external software (such as R or Python).</li>
+</ul>
+<p>Internally, all of the processes inherit from the same data cube type but take one or more
+existing data cubes as input arguments. Once data cube operation objects are created, only the shape of the result
+cube will be derived but no values will be calculated or read from input cubes. Data cube objects are primarily <em>proxy</em> 
+objects and follow the concept of lazy evaluation. This also applies to chains of operations. </p>
+<p>Data cube objects can be serialized as a simple JSON formatted directed acyclich graph. Below, a data cube operation chain
+that selects two bands of an image collection, computes differences between the bands, and finally computes the median 
+differences over time is serialized as a graph. This graph can be used to recreate the same operation chain.  </p>
+<pre><code>{
+  &quotcube_type&quot: &quotreduce&quot,
+  &quotin_cube&quot: {
+    &quotband_names&quot: [
+      &quot;LST difference&quot;
+    ],
+    &quotcube_type&quot: &quotapply_pixel&quot,
+    &quotexpr&quot: [
+      &quot;0.02*(LST_DAY-LST_NIGHT)&quot;
+    ],
+    &quotin_cube&quot: {
+      &quotbands&quot: [
+        &quot;LST_DAY&quot;,
+        &quot;LST_NIGHT&quot;
+      ],
+      &quotcube_type&quot: &quotselect_bands&quot,
+      &quotin_cube&quot: {
+        &quotchunk_size&quot: [
+          16,
+          256,
+          256
+        ],
+        &quotcube_type&quot: &quotimage_collection&quot,
+        &quotfile&quot: &quotMOD11A2.db&quot,
+        &quotview&quot: {
+          &quotaggregation&quot: &quotfirst&quot,
+          &quotresampling&quot: &quotnear&quot,
+          &quotspace&quot: {
+            &quotbottom&quot: 4447802.0,
+            &quotleft&quot: -1703607.0,
+            &quotnx&quot: 633,
+            &quotny&quot: 413,
+            &quotproj&quot: &quot+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +a=6371007.181 +b=6371007.181 +units=m +no_defs&quot,
+            &quotright&quot: 1703607.0,
+            &quottop&quot: 6671703.0
+          },
+          &quottime&quot: {
+            &quotdt&quot: &quotP1M&quot,
+            &quott0&quot: &quot2018-01&quot,
+            &quott1&quot: &quot2018-12&quot
+          }
+        }
+      }
+    }
+  },
+  &quotreducer&quot: &quotmedian&quot
+}
+</code></pre>
+
+<h2 id="distributed-data-cube-processing">Distributed data cube processing</h2>
+<p>The library comes with a server executable <code>gdalcubes_server</code> that listens on a given port for incoming HTTP requests to 
+a REST-like API.  </p>
+<p>This feature is still highly experimental. The general idea is that:</p>
+<ul>
+<li>Clients define a <em>swarm</em> of gdalcubes server instances that are used to evaluate a data cube operation.</li>
+<li>Processing of the result cube is then distributed to swarm members by chunks.</li>
+<li>The client shares its execution context, i.e. all files within the working directory by uploading files to all swarm members.</li>
+<li>GDAL dataset references in image collection files must be globally valid (i.e. accessible for all swarm members). Though this is 
+  a strong assumption, it should work well for cloud processing where imagery has global object identifers (such as S3 buckets).</li>
+</ul>
+<p>Details of the exposed API can be found at https://appelmar.github.io/gdalcubes/server-api.html.  </p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="installation.html" title="Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installation
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="R.html" title="R package" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                R package
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

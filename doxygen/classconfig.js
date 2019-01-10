@@ -1,0 +1,25 @@
+var classconfig =
+[
+    [ "add_collection_format_preset_dir", "classconfig.html#ab033d1acac0d3ac31bc447e084dc15be", null ],
+    [ "gdalcubes_cleanup", "classconfig.html#a78df7e04e4424a3523a05978ffbf775a", null ],
+    [ "gdalcubes_init", "classconfig.html#a91841779f6ea54f4e095248c8929ef66", null ],
+    [ "get_collection_format_preset_dirs", "classconfig.html#a77a881449aeb34aef77d7891dae4081e", null ],
+    [ "get_default_chunk_processor", "classconfig.html#a71b088785964178385cd512fae2725a2", null ],
+    [ "get_default_progress_bar", "classconfig.html#a555d24ff37d13b567b141c36b173d198", null ],
+    [ "get_error_handler", "classconfig.html#aa4be9e110e971ef38bd0b332d9de6cd5", null ],
+    [ "get_gdal_debug", "classconfig.html#af67b603b3b69b264170aee793349fef3", null ],
+    [ "get_gdal_num_threads", "classconfig.html#a763502b0268e26fa1d386807eedd4a58", null ],
+    [ "get_server_chunkcache_max", "classconfig.html#a2a72f87f13743f41fb9ff9caa4e8fc5e", null ],
+    [ "get_server_worker_threads_max", "classconfig.html#a86f351582a52af3cb384587d2ef156e8", null ],
+    [ "get_swarm_curl_verbose", "classconfig.html#a02a0a50377a6b789feaf306e6c38cb51", null ],
+    [ "get_version_info", "classconfig.html#ae480a6e56196cf6148340f5a0ec079f9", null ],
+    [ "set_default_chunk_processor", "classconfig.html#a4e451e6ffbfa3b298d9b33daba523f38", null ],
+    [ "set_default_progress_bar", "classconfig.html#ad0c60c574eb8a4d13ea84c7dc13c3082", null ],
+    [ "set_error_handler", "classconfig.html#a8f6690fe9a2fcfdeee17f01401333c42", null ],
+    [ "set_gdal_cache_max", "classconfig.html#a9a104cac31bb5531cd3bcc31fbe29005", null ],
+    [ "set_gdal_debug", "classconfig.html#ab8a7240bb750bae774ac089f086e8909", null ],
+    [ "set_gdal_num_threads", "classconfig.html#afe72fa27d485caf9f7a6d48d61783869", null ],
+    [ "set_server_chunkcache_max", "classconfig.html#af749d4c505ed69d546e34da8d055b5b1", null ],
+    [ "set_server_worker_threads_max", "classconfig.html#a20583d01c2a9ee70ab07ce9d6469c339", null ],
+    [ "set_swarm_curl_verbose", "classconfig.html#a3986864d3811b3f33aa11449bca5b1a5", null ]
+];
